@@ -1,10 +1,39 @@
 /* =====================================================
    main.js – Portfolio interactivity
+   Arctic Aurora Academic Portfolio
    ===================================================== */
 
+// ---------- Theme Toggle ----------
+(function initTheme() {
+  var saved = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+var themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', function () {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
+
+// ---------- Scroll Progress Bar ----------
+var progressBar = document.getElementById('scroll-progress');
+function updateScrollProgress() {
+  if (!progressBar) return;
+  var scrollTop    = window.scrollY || document.documentElement.scrollTop;
+  var docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+  var pct          = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
 // ---------- Navbar scroll effect ----------
-const navbar = document.getElementById('navbar');
+var navbar = document.getElementById('navbar');
 function handleNavbarScroll() {
+  if (!navbar) return;
   if (window.scrollY > 20) {
     navbar.classList.add('scrolled');
   } else {
@@ -14,28 +43,29 @@ function handleNavbarScroll() {
 window.addEventListener('scroll', handleNavbarScroll, { passive: true });
 
 // ---------- Mobile nav toggle ----------
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
+var navToggle = document.getElementById('navToggle');
+var navLinks  = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', function () {
-  const isOpen = navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
-});
-
-// Close mobile nav when a link is clicked
-navLinks.querySelectorAll('a').forEach(function (link) {
-  link.addEventListener('click', function () {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', function () {
+    var isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
-});
+
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // ---------- Active nav link on scroll ----------
-const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-links a');
+var sections = document.querySelectorAll('section[id]');
+var navItems = document.querySelectorAll('.nav-links a');
 
 function updateActiveNavLink() {
-  const scrollPos = window.scrollY + 100;
+  var scrollPos = window.scrollY + 120;
   sections.forEach(function (section) {
     if (
       scrollPos >= section.offsetTop &&
@@ -52,33 +82,118 @@ function updateActiveNavLink() {
 }
 window.addEventListener('scroll', updateActiveNavLink, { passive: true });
 
-// ---------- Intersection Observer – fade-in cards ----------
-const fadeEls = document.querySelectorAll(
-  '.highlight-card, .interest-card, .publication-card, .contact-card'
+// ---------- Animated Counters ----------
+function animateCounter(el) {
+  var target   = parseInt(el.getAttribute('data-count'), 10);
+  var duration = 1400;
+  var start    = null;
+
+  function step(ts) {
+    if (!start) start = ts;
+    var progress = Math.min((ts - start) / duration, 1);
+    // ease-out cubic
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+var counterEls  = document.querySelectorAll('.metric-number[data-count]');
+var countersSeen = false;
+
+var counterObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting && !countersSeen) {
+      countersSeen = true;
+      counterEls.forEach(animateCounter);
+      counterObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+if (counterEls.length > 0) {
+  counterObserver.observe(counterEls[0].closest('.about-metrics') || counterEls[0]);
+}
+
+// ---------- Fade-in on scroll ----------
+var fadeEls = document.querySelectorAll(
+  '.highlight-card, .interest-card, .publication-card, .contact-card, ' +
+  '.project-card, .news-card, .timeline-item'
 );
 
-const observer = new IntersectionObserver(
-  function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
+var fadeObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
 
 fadeEls.forEach(function (el) {
-  el.style.opacity  = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
+  el.classList.add('fade-in');
+  fadeObserver.observe(el);
+});
+
+// ---------- Publication search ----------
+var pubSearch    = document.getElementById('pubSearch');
+var pubCards     = document.querySelectorAll('.publication-card');
+var pubYearGroups = document.querySelectorAll('.pub-year-group');
+var pubNoResults = document.getElementById('pubNoResults');
+var activeFilter = 'all';
+
+function filterPublications() {
+  var query   = pubSearch ? pubSearch.value.toLowerCase().trim() : '';
+  var visible = 0;
+
+  pubCards.forEach(function (card) {
+    var type     = (card.getAttribute('data-type') || '').toLowerCase();
+    var text     = card.textContent.toLowerCase();
+    var matchesQ = !query || text.indexOf(query) !== -1;
+    var matchesF = activeFilter === 'all' || type === activeFilter;
+
+    if (matchesQ && matchesF) {
+      card.style.display = '';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Hide year groups with no visible cards
+  pubYearGroups.forEach(function (group) {
+    var cards   = group.querySelectorAll('.publication-card');
+    var anyVisible = false;
+    cards.forEach(function (c) { if (c.style.display !== 'none') anyVisible = true; });
+    group.style.display = anyVisible ? '' : 'none';
+  });
+
+  if (pubNoResults) {
+    pubNoResults.classList.toggle('visible', visible === 0);
+  }
+}
+
+if (pubSearch) {
+  pubSearch.addEventListener('input', filterPublications);
+}
+
+var filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    filterBtns.forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    activeFilter = btn.getAttribute('data-filter');
+    filterPublications();
+  });
 });
 
 // ---------- Footer year ----------
-const yearEl = document.getElementById('year');
+var yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+
+// Run once at init
+handleNavbarScroll();
+updateActiveNavLink();

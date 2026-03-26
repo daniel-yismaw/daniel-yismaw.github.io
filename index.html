@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samson Tilahun Moges – Space Physicist</title>
-  <meta name="description" content="Personal academic portfolio of Samson Tilahun Moges – space physicist at Sodankylä Geophysical Observatory, University of Oulu, Finland. Research in ionospheric physics, TIDs, GPS TEC, and EISCAT radar." />
+  <title>Samson Tilahun Moges – Space Physicist &amp; Postdoctoral Researcher</title>
+  <meta name="description" content="Academic portfolio of Samson Tilahun Moges – postdoctoral space physicist at Sodankylä Geophysical Observatory, University of Oulu, Finland. Research in ionospheric physics, TIDs, EISCAT radar, GPS TEC, and machine learning." />
+  <meta property="og:title" content="Samson Tilahun Moges – Space Physicist" />
+  <meta property="og:description" content="Postdoctoral researcher specialising in ionospheric physics, traveling ionospheric disturbances, and machine learning at the University of Oulu." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- ========== SCROLL PROGRESS ========== -->
+  <div id="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-hidden="true"></div>
 
   <!-- ========== NAV ========== -->
   <nav class="navbar" id="navbar">
@@ -19,56 +26,83 @@
         <span class="nav-brand-name">Samson T. Moges</span>
         <span class="nav-brand-sub">Space Physicist</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-right">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <div class="hero-bg-pattern" aria-hidden="true"></div>
+    <div class="hero-aurora" aria-hidden="true">
+      <div class="aurora-1"></div>
+      <div class="aurora-2"></div>
+      <div class="aurora-3"></div>
+    </div>
+    <div class="hero-stars" aria-hidden="true"></div>
+
     <div class="hero-content">
       <div class="hero-avatar">
-        <img src="https://github.com/user-attachments/assets/0f6189f4-0e19-4b79-853c-5bdfe471e49e" alt="Samson Moges" class="avatar-img" />
+        <img
+          src="https://github.com/user-attachments/assets/0f6189f4-0e19-4b79-853c-5bdfe471e49e"
+          alt="Portrait of Samson Tilahun Moges"
+          class="avatar-img"
+          width="180" height="180"
+        />
+        <div class="avatar-ring" aria-hidden="true"></div>
       </div>
+
       <div class="hero-text">
-        <p class="hero-pre">Space Physics Researcher</p>
-        <h1 class="hero-name">Samson Tilahun<br>Moges</h1>
+        <p class="hero-pre">Postdoctoral Researcher · Space Physicist</p>
+        <h1 class="hero-name">Samson Tilahun<br><span class="hero-name-accent">Moges</span></h1>
         <p class="hero-affiliation">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clip-rule="evenodd"/></svg>
           Sodankylä Geophysical Observatory, University of Oulu, Finland
         </p>
         <div class="hero-tags">
-          <span class="hero-tag">Space Physics</span>
-          <span class="hero-tag">Ionosphere</span>
-          <span class="hero-tag">Ionosonde</span>
-          <span class="hero-tag">Incoherent Scatter Radar</span>
+          <span class="hero-tag">Ionospheric Physics</span>
+          <span class="hero-tag">EISCAT Radar</span>
+          <span class="hero-tag">GPS TEC</span>
+          <span class="hero-tag">Traveling Ionospheric Disturbances</span>
+          <span class="hero-tag">Machine Learning</span>
         </div>
         <div class="hero-links">
           <a class="btn btn-primary" href="https://scholar.google.com/citations?user=Weg1NwQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
             Google Scholar
           </a>
           <a class="btn btn-outline" href="https://www.researchgate.net/profile/Samson-Moges" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.078.53 3.19 3.19 0 00.112.437c.243.743.65 1.303 1.214 1.68.565.376 1.255.564 2.072.564.647 0 1.224-.096 1.735-.291a3.517 3.517 0 001.296-.871 3.52 3.52 0 00.748-1.383c.158-.54.238-1.15.238-1.833v-.44H19.68v1.7h1.784c-.073.498-.244.876-.516 1.137-.272.26-.646.39-1.12.39-.37 0-.686-.075-.95-.226a1.77 1.77 0 01-.629-.64 3.046 3.046 0 01-.36-.976 6.998 6.998 0 01-.112-1.304v-.044c0-.494.038-.918.112-1.272a3.068 3.068 0 01.36-.952 1.79 1.79 0 01.628-.629c.264-.148.58-.222.95-.222.343 0 .647.075.912.225.265.15.463.375.595.677l1.738-.636a3.178 3.178 0 00-1.272-1.552C20.81.095 20.232 0 19.586 0zM0 .19v11.594h2.104v-4.55h1.892c.647 0 1.215-.12 1.703-.36.49-.24.872-.59 1.148-1.05.277-.46.415-.998.415-1.612 0-.635-.138-1.187-.415-1.655a2.827 2.827 0 00-1.148-1.08C5.211.297 4.643.19 3.996.19H0zm2.104 1.822h1.67c.493 0 .886.133 1.18.4.293.265.44.643.44 1.134 0 .49-.147.87-.44 1.138-.294.267-.687.4-1.18.4H2.104V2.012zm5.81 0h2.08l2.66 7.578 2.66-7.578h2.076L12.964 11.2a3.226 3.226 0 01-.37.793 2.33 2.33 0 01-.56.572 2.17 2.17 0 01-.716.34c-.264.074-.559.113-.886.113-.327 0-.634-.039-.922-.117a2.14 2.14 0 01-.75-.367l.611-1.535c.1.073.214.13.343.17.13.04.26.06.393.06.16 0 .303-.026.428-.078a.987.987 0 00.332-.226 1.33 1.33 0 00.23-.367 2.5 2.5 0 00.14-.487L7.914 2.012z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.078.53 3.19 3.19 0 00.112.437c.243.743.65 1.303 1.214 1.68.565.376 1.255.564 2.072.564.647 0 1.224-.096 1.735-.291a3.517 3.517 0 001.296-.871 3.52 3.52 0 00.748-1.383c.158-.54.238-1.15.238-1.833v-.44H19.68v1.7h1.784c-.073.498-.244.876-.516 1.137-.272.26-.646.39-1.12.39-.37 0-.686-.075-.95-.226a1.77 1.77 0 01-.629-.64 3.046 3.046 0 01-.36-.976 6.998 6.998 0 01-.112-1.304v-.044c0-.494.038-.918.112-1.272a3.068 3.068 0 01.36-.952 1.79 1.79 0 01.628-.629c.264-.148.58-.222.95-.222.343 0 .647.075.912.225.265.15.463.375.595.677l1.738-.636a3.178 3.178 0 00-1.272-1.552C20.81.095 20.232 0 19.586 0zM0 .19v11.594h2.104v-4.55h1.892c.647 0 1.215-.12 1.703-.36.49-.24.872-.59 1.148-1.05.277-.46.415-.998.415-1.612 0-.635-.138-1.187-.415-1.655a2.827 2.827 0 00-1.148-1.08C5.211.297 4.643.19 3.996.19H0zm2.104 1.822h1.67c.493 0 .886.133 1.18.4.293.265.44.643.44 1.134 0 .49-.147.87-.44 1.138-.294.267-.687.4-1.18.4H2.104V2.012zm5.81 0h2.08l2.66 7.578 2.66-7.578h2.076L12.964 11.2a3.226 3.226 0 01-.37.793 2.33 2.33 0 01-.56.572 2.17 2.17 0 01-.716.34c-.264.074-.559.113-.886.113-.327 0-.634-.039-.922-.117a2.14 2.14 0 01-.75-.367l.611-1.535c.1.073.214.13.343.17.13.04.26.06.393.06.16 0 .303-.026.428-.078a.987.987 0 00.332-.226 1.33 1.33 0 00.23-.367 2.5 2.5 0 00.14-.487L7.914 2.012z"/></svg>
             ResearchGate
           </a>
-          <a class="btn btn-outline" href="https://oulu.cris.fi/en/persons/OY-381666650" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9 12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+          <a class="btn btn-ghost" href="#cv">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            Academic CV
+          </a>
+          <a class="btn btn-ghost" href="https://oulu.cris.fi/en/persons/OY-381666650" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9 12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
             University Profile
           </a>
         </div>
       </div>
     </div>
-    <a class="scroll-down" href="#about" aria-label="Scroll to About">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+
+    <a class="scroll-down" href="#about" aria-label="Scroll to About section">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
     </a>
   </section>
 
@@ -76,68 +110,87 @@
   <section class="section" id="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
+
+      <div class="about-metrics">
+        <div class="metric-item">
+          <span class="metric-number" data-count="63">63</span>
+          <span class="metric-label">Citations</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number" data-count="6">6</span>
+          <span class="metric-label">h-index</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number" data-count="15">15</span>
+          <span class="metric-label">Publications</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-number" data-count="9">9</span>
+          <span class="metric-label">Years Active</span>
+        </div>
+      </div>
+
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I am a space physicist at the Sodankylä Geophysical Observatory, University of Oulu, Finland, 
-            where my doctoral research investigates Traveling Ionospheric Disturbances (TIDs) — large-scale 
-            wave structures in the Earth's ionosphere — using a rapid-run ionosonde, EISCAT incoherent scatter 
-            radar, and GPS Total Electron Content measurements.
+            I am a postdoctoral space physicist at the Sodankylä Geophysical Observatory,
+            University of Oulu, Finland. My research investigates Traveling Ionospheric
+            Disturbances (TIDs) — large-scale wave structures in the Earth's ionosphere —
+            using a rapid-run ionosonde, EISCAT incoherent scatter radar, and GPS Total
+            Electron Content measurements. My PhD thesis, completed in 2026, provides the
+            most comprehensive statistical characterisation of TIDs at high latitudes to date.
           </p>
           <p>
-            Before joining the University of Oulu, I conducted foundational ionospheric research in East Africa, 
-            studying plasma irregularities, equatorial electrojet-driven E×B drifts, and radio wave scintillation 
-            at low-latitude stations in Ethiopia. This dual-region expertise — spanning polar high-latitude 
-            physics and equatorial ionospheric dynamics — gives my research a uniquely global perspective.
+            Before joining the University of Oulu, I conducted foundational ionospheric
+            research in East Africa, studying plasma irregularities, equatorial
+            electrojet-driven E×B drifts, and radio wave scintillation at low-latitude
+            stations in Ethiopia. This dual-region expertise — spanning polar high-latitude
+            physics and equatorial ionospheric dynamics — gives my research a uniquely global
+            perspective on space weather phenomena.
           </p>
           <p>
-            More recently, I have contributed to the growing intersection of space physics and machine learning, 
-            applying deep convolutional neural networks to the automated scaling of ionogram parameters — 
-            opening new possibilities for real-time space weather monitoring at remote observatories.
+            I have also contributed to the intersection of space physics and machine learning,
+            applying deep convolutional neural networks to the automated scaling of ionogram
+            parameters — opening new possibilities for real-time space weather monitoring at
+            remote and polar observatories.
           </p>
         </div>
+
         <div class="about-highlights">
-          <div class="about-stats">
-            <div class="stat-item">
-              <span class="stat-number">63</span>
-              <span class="stat-label">Citations</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item">
-              <span class="stat-number">6</span>
-              <span class="stat-label">h-index</span>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-item">
-              <span class="stat-number">15</span>
-              <span class="stat-label">Publications</span>
-            </div>
-          </div>
           <div class="highlight-card">
             <span class="highlight-icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
             </span>
             <div>
-              <h3>Doctoral Researcher</h3>
-              <p>University of Oulu, Sodankylä Geophysical Observatory, Finland. Verified email at oulu.fi.</p>
+              <h3>Postdoctoral Researcher</h3>
+              <p>Sodankylä Geophysical Observatory, University of Oulu, Finland. Verified email at oulu.fi.</p>
             </div>
           </div>
           <div class="highlight-card">
             <span class="highlight-icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
             </span>
             <div>
               <h3>Dual-Region Expertise</h3>
-              <p>High-latitude (Arctic Finland) and equatorial (Ethiopian sector) ionospheric research.</p>
+              <p>High-latitude Arctic (Finland) and equatorial (Ethiopian sector) ionospheric research.</p>
             </div>
           </div>
           <div class="highlight-card">
             <span class="highlight-icon-wrap" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2a3 3 0 003 3H7a3 3 0 003-3"/><path d="M12 2a3 3 0 00-3 3v1H9a3 3 0 003-3z"/><rect x="3" y="6" width="18" height="4" rx="1"/><path d="M5 10v9a2 2 0 002 2h10a2 2 0 002-2v-9"/></svg>
             </span>
             <div>
               <h3>Publications Since 2017</h3>
-              <p>Peer-reviewed articles in <em>JGR Space Physics</em>, <em>Radio Science</em>, <em>Earth and Space Science</em>, <em>Advances in Space Research</em>, and <em>JASTP</em>.</p>
+              <p>Peer-reviewed articles in <em>JGR Space Physics</em>, <em>Radio Science</em>, <em>Earth and Space Science</em>, <em>Advances in Space Research</em>.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-icon-wrap" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <div>
+              <h3>Machine Learning Pioneer</h3>
+              <p>Contributed deep CNN-based automatic ionogram scaling for real-time space weather monitoring.</p>
             </div>
           </div>
         </div>
@@ -145,40 +198,215 @@
     </div>
   </section>
 
-  <!-- ========== RESEARCH ========== -->
-  <section class="section section-alt" id="research">
+  <!-- ========== NEWS ========== -->
+  <section class="section section-alt" id="news">
     <div class="container">
-      <h2 class="section-title">Research Interests</h2>
-      <p class="section-subtitle">My research bridges high-latitude and equatorial ionospheric physics, combining classical instrumentation with modern data science.</p>
-      <div class="interests-grid">
-        <div class="interest-card">
-          <div class="interest-icon-wrap" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+      <h2 class="section-title">Recent News</h2>
+      <p class="section-subtitle">Updates on publications, research milestones, and academic activities.</p>
+
+      <div class="news-grid">
+
+        <div class="news-card">
+          <div class="news-date">
+            <span class="news-date-month">Jan</span>
+            <span class="news-date-year">2026</span>
           </div>
-          <h3>Traveling Ionospheric Disturbances</h3>
-          <p>Characterising TID statistics, wave parameters, and atmospheric gravity wave coupling using rapid-run ionosondes and EISCAT incoherent scatter radar at high latitudes.</p>
+          <div class="news-content">
+            <span class="news-type">PhD Thesis</span>
+            <p class="news-headline">PhD Thesis Published at University of Oulu</p>
+            <p class="news-desc">Thesis: <em>Studies of Traveling Ionospheric Disturbances using Rapid-Run Ionosonde, EISCAT Radar and GPS TEC</em> — now publicly available in the Oulu CRIS repository.</p>
+          </div>
         </div>
-        <div class="interest-card">
-          <div class="interest-icon-wrap" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><circle cx="12" cy="12" r="9" /><ellipse cx="12" cy="12" rx="9" ry="4" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="12" y1="3" x2="12" y2="21" /></svg>
+
+        <div class="news-card">
+          <div class="news-date">
+            <span class="news-date-month">Nov</span>
+            <span class="news-date-year">2025</span>
+          </div>
+          <div class="news-content">
+            <span class="news-type">New Publication</span>
+            <p class="news-headline">AGW and MSTID Study Published in JGR Space Physics</p>
+            <p class="news-desc">Paper on characteristics of atmospheric gravity waves and medium-scale TIDs derived from EISCAT measurements published in <em>JGR: Space Physics</em> 130(11).</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-date">
+            <span class="news-date-month">Oct</span>
+            <span class="news-date-year">2024</span>
+          </div>
+          <div class="news-content">
+            <span class="news-type">New Publication</span>
+            <p class="news-headline">Solar Activity Dependence of TID Amplitudes — JGR 2024</p>
+            <p class="news-desc">New paper in <em>JGR: Space Physics</em> 129(10) investigating how solar activity modulates the amplitudes of TIDs at high latitudes using rapid-run ionosonde data.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-date">
+            <span class="news-date-month">Oct</span>
+            <span class="news-date-year">2024</span>
+          </div>
+          <div class="news-content">
+            <span class="news-type">New Publication</span>
+            <p class="news-headline">Deep Learning for Ionogram Scaling — Earth &amp; Space Science</p>
+            <p class="news-desc">CNN-based automatic ionogram parameter recognition published in <em>Earth and Space Science</em> 11(10). Enables scalable space weather monitoring at polar observatories.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-date">
+            <span class="news-date-month">Apr</span>
+            <span class="news-date-year">2024</span>
+          </div>
+          <div class="news-content">
+            <span class="news-type">New Publication</span>
+            <p class="news-headline">TID Statistics at High Latitudes Published in JGR</p>
+            <p class="news-desc">Comprehensive statistical study of TIDs using the Sodankylä rapid-run ionosonde published in <em>JGR: Space Physics</em> 129(4). Now among most-cited papers in this dataset.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-date">
+            <span class="news-date-month">Aug</span>
+            <span class="news-date-year">2023</span>
+          </div>
+          <div class="news-content">
+            <span class="news-type">Conference</span>
+            <p class="news-headline">Presented at URSI GASS 2023</p>
+            <p class="news-desc">Co-authored conference presentation on deep learning for ionogram parameter scaling at the XXXV URSI General Assembly and Scientific Symposium (URSI GASS).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESEARCH ========== -->
+  <section class="section" id="research">
+    <div class="container">
+      <h2 class="section-title">Research</h2>
+      <p class="section-subtitle">Bridging high-latitude and equatorial ionospheric physics with modern data science and remote sensing.</p>
+
+      <div class="research-projects">
+
+        <div class="project-card">
+          <div class="project-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+          </div>
+          <h3>High-Latitude TID Dynamics</h3>
+          <p>Statistical characterisation of traveling ionospheric disturbances at the Sodankylä Observatory using rapid-run ionosonde data. Covering wave parameters, seasonal patterns, solar cycle dependence, and coupling with atmospheric gravity waves observed by EISCAT radar.</p>
+          <div class="project-tags">
+            <span class="project-tag">Ionosonde</span>
+            <span class="project-tag">EISCAT</span>
+            <span class="project-tag">Sodankylä</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>
+          </div>
+          <h3>Machine Learning for Space Weather</h3>
+          <p>Development and validation of deep convolutional neural networks for automatic ionogram parameter scaling (foF2, hmF2, MUF). Enables high-throughput, observer-independent processing of large ionogram archives at polar observatories.</p>
+          <div class="project-tags">
+            <span class="project-tag">Deep CNN</span>
+            <span class="project-tag">Ionograms</span>
+            <span class="project-tag">Space Weather</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="4"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
           </div>
           <h3>Equatorial Ionospheric Physics</h3>
-          <p>Investigating plasma irregularities, E×B drift dynamics, and radio wave scintillation over the East African equatorial sector using multi-instrument observations.</p>
+          <p>Multi-instrument investigations of plasma irregularities, equatorial electrojet-driven E×B drifts, and radio wave scintillation over the East African sector. Using C/NOFS satellite, COSMIC radio occultation, and ground-based GNSS networks.</p>
+          <div class="project-tags">
+            <span class="project-tag">GPS TEC</span>
+            <span class="project-tag">Plasma Irregularities</span>
+            <span class="project-tag">East Africa</span>
+          </div>
         </div>
+
+      </div>
+
+      <h3 class="subsection-title">Research Interests</h3>
+      <div class="interests-grid">
+
         <div class="interest-card">
           <div class="interest-icon-wrap" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+          </div>
+          <h3>Traveling Ionospheric Disturbances</h3>
+          <p>TID statistics, wave parameters, and atmospheric gravity wave coupling using rapid-run ionosondes and EISCAT.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="4"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Equatorial Ionospheric Physics</h3>
+          <p>Plasma irregularities, E×B drift dynamics, and radio wave scintillation over the East African equatorial sector.</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" /></svg>
           </div>
           <h3>GPS TEC &amp; Space Weather</h3>
-          <p>Deriving Total Electron Content from GPS/GNSS networks, COSMIC occultations, and C/NOFS satellite data to monitor ionospheric variability and solar activity effects.</p>
+          <p>Total Electron Content from GPS/GNSS networks, COSMIC occultations, and C/NOFS satellite data.</p>
         </div>
+
         <div class="interest-card">
           <div class="interest-icon-wrap" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>
           </div>
           <h3>Machine Learning for Space Data</h3>
-          <p>Applying deep convolutional neural networks for automatic ionogram parameter scaling, enabling scalable and reliable space weather monitoring at polar and sub-polar observatories.</p>
+          <p>Deep CNNs for automatic ionogram parameter scaling, enabling real-time space weather monitoring at remote sites.</p>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CV / TIMELINE ========== -->
+  <section class="section section-alt" id="cv">
+    <div class="container">
+      <h2 class="section-title">Academic Journey</h2>
+      <p class="section-subtitle">From foundational studies in Ethiopia to cutting-edge space physics research in the Finnish Arctic.</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <span class="timeline-period">2026 – Present</span>
+          <div class="timeline-role">Postdoctoral Researcher</div>
+          <div class="timeline-org">Sodankylä Geophysical Observatory, University of Oulu, Finland</div>
+          <p class="timeline-desc">Continuing research on ionospheric dynamics, TIDs, and machine learning applications in space physics. Expanding collaborative work with EISCAT and GPS TEC networks.</p>
+          <span class="timeline-badge">Current Position</span>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-period">2019 – 2026</span>
+          <div class="timeline-role">PhD Candidate in Space Physics</div>
+          <div class="timeline-org">University of Oulu, Finland</div>
+          <p class="timeline-desc">Doctoral thesis: <em>Studies of Traveling Ionospheric Disturbances using Rapid-Run Ionosonde, EISCAT Radar and GPS TEC</em>. Research conducted at Sodankylä Geophysical Observatory. Published 10+ peer-reviewed articles during the programme.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-period">2015 – 2019</span>
+          <div class="timeline-role">Researcher, Space Physics</div>
+          <div class="timeline-org">Ethiopian Space Science and Technology Institute (ESSTI), Addis Ababa, Ethiopia</div>
+          <p class="timeline-desc">Conducted multi-instrument investigations of equatorial ionospheric physics including plasma irregularities, E×B drift dynamics, and radio wave scintillation over the East African sector.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-period">2010 – 2015</span>
+          <div class="timeline-role">Graduate Studies in Physics</div>
+          <div class="timeline-org">Bahir Dar University &amp; Addis Ababa University, Ethiopia</div>
+          <p class="timeline-desc">Foundational training in physics and ionospheric science. Early research on solar activity indices as proxies for ionospheric Total Electron Content variations over Ethiopia (2010–2014 dataset).</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -193,40 +421,56 @@
         and <a href="https://www.researchgate.net/profile/Samson-Moges/research" target="_blank" rel="noopener noreferrer" class="inline-link">ResearchGate</a>.
       </p>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2026</h3>
+      <!-- Search & Filter Controls -->
+      <div class="pub-controls">
+        <div class="pub-search-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" id="pubSearch" class="pub-search" placeholder="Search by title, author, journal…" aria-label="Search publications" />
+        </div>
+        <div class="pub-filters" role="group" aria-label="Filter publications by type">
+          <button class="filter-btn active" data-filter="all">All (15)</button>
+          <button class="filter-btn" data-filter="journal">Journal (13)</button>
+          <button class="filter-btn" data-filter="conference">Conference (1)</button>
+          <button class="filter-btn" data-filter="preprint">Preprint (1)</button>
+          <button class="filter-btn" data-filter="thesis">Thesis (1)</button>
+        </div>
+      </div>
+
+      <!-- 2026 -->
+      <div class="pub-year-group" data-year="2026">
+        <h3 class="pub-year-label" data-count="1">2026</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="thesis">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-thesis">PhD Thesis</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://oulu.cris.fi/en/publications/studies-of-traveling-ionospheric-disturbances-using-rapid-run-ion"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://oulu.cris.fi/en/publications/studies-of-traveling-ionospheric-disturbances-using-rapid-run-ion" target="_blank" rel="noopener noreferrer">
                 Studies of Traveling Ionospheric Disturbances using Rapid-Run Ionosonde, EISCAT Radar and GPS TEC
               </a>
             </h4>
             <p class="pub-authors"><strong>Samson Tilahun Moges</strong></p>
-            <p class="pub-venue"><em>Oulun yliopisto</em> (University of Oulu, Finland)</p>
+            <p class="pub-venue"><em>Oulun yliopisto</em> — University of Oulu, Finland</p>
             <a class="btn btn-sm btn-outline" href="https://oulu.cris.fi/en/publications/studies-of-traveling-ionospheric-disturbances-using-rapid-run-ion" target="_blank" rel="noopener noreferrer">University Repository →</a>
           </div>
 
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2025</h3>
+      <!-- 2025 -->
+      <div class="pub-year-group" data-year="2025">
+        <h3 class="pub-year-label" data-count="2">2025</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">1 citation</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://doi.org/10.1029/2025JA034253" target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://doi.org/10.1029/2025JA034253" target="_blank" rel="noopener noreferrer">
                 Characteristics of Atmospheric Gravity Waves and Medium Scale Traveling Ionospheric Disturbances Derived from EISCAT Measurements
               </a>
             </h4>
@@ -235,15 +479,14 @@
             <a class="btn btn-sm btn-outline" href="https://doi.org/10.1029/2025JA034253" target="_blank" rel="noopener noreferrer">DOI →</a>
           </div>
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q2">Q2</span>
               <span class="pub-cites">1 citation</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=Assimilation+GPS+TEC+COSMIC+foF2+hmF2+SPIM+model+unscented+Kalman+filter+East+African+equatorial"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=Assimilation+GPS+TEC+COSMIC+foF2+hmF2+SPIM+Model+Unscented+Kalman+Filter+East+African+Equatorial+Region" target="_blank" rel="noopener noreferrer">
                 Assimilation of GPS TEC and COSMIC foF2/hmF2 into SPIM Model using Unscented Kalman Filter Techniques over the East African Equatorial Region
               </a>
             </h4>
@@ -254,18 +497,19 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2024</h3>
+      <!-- 2024 -->
+      <div class="pub-year-group" data-year="2024">
+        <h3 class="pub-year-label" data-count="3">2024</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">9 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://doi.org/10.1029/2023EA003446" target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://doi.org/10.1029/2023EA003446" target="_blank" rel="noopener noreferrer">
                 A Deep Learning Approach for Automatic Ionogram Parameters Recognition with Convolutional Neural Networks
               </a>
             </h4>
@@ -274,14 +518,14 @@
             <a class="btn btn-sm btn-outline" href="https://doi.org/10.1029/2023EA003446" target="_blank" rel="noopener noreferrer">DOI →</a>
           </div>
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">8 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://doi.org/10.1029/2023JA031694" target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://doi.org/10.1029/2023JA031694" target="_blank" rel="noopener noreferrer">
                 Statistics of Traveling Ionospheric Disturbances at High Latitudes using a Rapid-Run Ionosonde
               </a>
             </h4>
@@ -290,14 +534,14 @@
             <a class="btn btn-sm btn-outline" href="https://doi.org/10.1029/2023JA031694" target="_blank" rel="noopener noreferrer">DOI →</a>
           </div>
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">4 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://doi.org/10.1029/2024JA033013" target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://doi.org/10.1029/2024JA033013" target="_blank" rel="noopener noreferrer">
                 Solar Activity Dependence of Traveling Ionospheric Disturbance Amplitudes using a Rapid-Run Ionosonde in High Latitudes
               </a>
             </h4>
@@ -309,18 +553,18 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2023</h3>
+      <!-- 2023 -->
+      <div class="pub-year-group" data-year="2023">
+        <h3 class="pub-year-label" data-count="1">2023</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="conference">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-conf">Conference Paper</span>
               <span class="pub-cites">6 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=Deep+learning+ionogram+parameters+scaling+polar+region+ionosphere+Sherstyukov+Kozlovsky+Ulich+Moges+2023"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=Deep+Learning+Ionogram+Parameters+Scaling+Polar+Region+Ionosphere+Sherstyukov+Kozlovsky+Ulich+Moges+2023" target="_blank" rel="noopener noreferrer">
                 Deep Learning for Ionogram Parameters Scaling at Polar Region Ionosphere
               </a>
             </h4>
@@ -331,18 +575,19 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2022</h3>
+      <!-- 2022 -->
+      <div class="pub-year-group" data-year="2022">
+        <h3 class="pub-year-label" data-count="2">2022</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q2">Q2</span>
               <span class="pub-cites">8 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://doi.org/10.1029/2022RS007426" target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://doi.org/10.1029/2022RS007426" target="_blank" rel="noopener noreferrer">
                 Storm-Time Observations of Traveling Ionospheric Disturbances and Ionospheric Irregularities in East Africa
               </a>
             </h4>
@@ -351,14 +596,13 @@
             <a class="btn btn-sm btn-outline" href="https://doi.org/10.1029/2022RS007426" target="_blank" rel="noopener noreferrer">DOI →</a>
           </div>
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="preprint">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-preprint">Preprint</span>
               <span class="pub-cites">7 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=First+Ethiopian+Remote+Sensing+Satellite+ETRSS-1+Mission+information+overview+2022"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=First+Ethiopian+Remote+Sensing+Satellite+ETRSS-1+Mission+Information+Overview+2022" target="_blank" rel="noopener noreferrer">
                 First Ethiopian Remote Sensing Satellite (ETRSS-1): Mission Information and Overview
               </a>
             </h4>
@@ -369,19 +613,19 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2021</h3>
+      <!-- 2021 -->
+      <div class="pub-year-group" data-year="2021">
+        <h3 class="pub-year-label" data-count="2">2021</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q2">Q2</span>
               <span class="pub-cites">1 citation</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=C/NOFS+COSMIC+GNSS+observations+plasma+irregularity+evening+nighttimes+East+African+sector+Tilahun+2021"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=C/NOFS+COSMIC+GNSS+Observations+Plasma+Irregularity+Evening+Nighttimes+East+African+Sector+Tilahun+2021" target="_blank" rel="noopener noreferrer">
                 C/NOFS, COSMIC and GNSS Observations of Plasma Irregularity during the Evening and Nighttimes in East African Sector
               </a>
             </h4>
@@ -389,15 +633,14 @@
             <p class="pub-venue"><em>Radio Science</em> 56 (4), 1–10</p>
           </div>
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q2">Q2</span>
               <span class="pub-cites">1 citation</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=Estimating+daytime+vertical+ExB+drift+magnetometer+C/NOFS+measurements+empirical+models+East+African+sector+Tilahun+2021"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=Estimating+Daytime+Vertical+ExB+Drift+Magnetometer+CNOFS+Measurements+Empirical+Models+East+African+Sector+Tilahun+2021" target="_blank" rel="noopener noreferrer">
                 Estimating the Daytime Vertical E×B Drift from Magnetometer and C/NOFS Measurements and Comparison with Empirical Models over the East African Sector
               </a>
             </h4>
@@ -408,19 +651,19 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2020</h3>
+      <!-- 2020 -->
+      <div class="pub-year-group" data-year="2020">
+        <h3 class="pub-year-label" data-count="2">2020</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">3 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=Evening+time+multi-instrumental+verification+ionospheric+irregularity+East+Africa+Ethiopia+Tilahun+2020"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=Evening+Time+Multi-Instrumental+Verification+Ionospheric+Irregularity+East+Africa+Ethiopia+Tilahun+2020" target="_blank" rel="noopener noreferrer">
                 Evening Time Multi-Instrumental Verification of Ionospheric Irregularity in East Africa, Ethiopia
               </a>
             </h4>
@@ -428,15 +671,14 @@
             <p class="pub-venue"><em>Advances in Space Research</em> 65 (11), 2497–2506</p>
           </div>
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">2 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=Delta+H+proxy+variations+ExB+drift+plasma+irregularity+East+Africa+Tilahun+Mezgebe+2020"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=DeltaH+Proxy+Variations+ExB+Drift+Plasma+Irregularity+East+Africa+Tilahun+Mezgebe+2020" target="_blank" rel="noopener noreferrer">
                 ΔH as a Proxy for the Variations of E×B Drift and Plasma Irregularity over East Africa
               </a>
             </h4>
@@ -447,18 +689,19 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2019</h3>
+      <!-- 2019 -->
+      <div class="pub-year-group" data-year="2019">
+        <h3 class="pub-year-label" data-count="1">2019</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q2">Q2</span>
               <span class="pub-cites">7 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://doi.org/10.1016/j.jastp.2019.105135" target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://doi.org/10.1016/j.jastp.2019.105135" target="_blank" rel="noopener noreferrer">
                 Verification of Ionospheric Perturbation Induced L-Band Frequency Scintillation using HF/VHF Bands over the African Equatorial and Low Latitude Region, Ethiopia
               </a>
             </h4>
@@ -470,19 +713,19 @@
         </div>
       </div>
 
-      <div class="pub-year-group">
-        <h3 class="pub-year-label">2017</h3>
+      <!-- 2017 -->
+      <div class="pub-year-group" data-year="2017">
+        <h3 class="pub-year-label" data-count="1">2017</h3>
         <div class="publications-list">
 
-          <div class="publication-card">
+          <div class="publication-card" data-type="journal">
             <div class="pub-meta-row">
               <span class="pub-badge pub-badge-journal">Journal Article</span>
               <span class="pub-quality pub-q1">Q1</span>
               <span class="pub-cites">5 citations</span>
             </div>
             <h4 class="pub-title">
-              <a href="https://scholar.google.com/scholar?q=Solar+activity+indices+proxy+variation+ionospheric+total+electron+content+TEC+Bahir+Dar+Ethiopia+2010-2014+Kassa+Tilahun+Damtie"
-                 target="_blank" rel="noopener noreferrer" class="inline-link">
+              <a href="https://scholar.google.com/scholar?q=Solar+Activity+Indices+Proxy+Variation+Ionospheric+Total+Electron+Content+TEC+Bahir+Dar+Ethiopia+2010-2014+Kassa+Tilahun+Damtie" target="_blank" rel="noopener noreferrer">
                 Solar Activity Indices as a Proxy for the Variation of Ionospheric Total Electron Content (TEC) over Bahir Dar, Ethiopia during the Year 2010–2014
               </a>
             </h4>
@@ -493,9 +736,12 @@
         </div>
       </div>
 
+      <!-- No results message -->
+      <p id="pubNoResults" class="pub-no-results">No publications match your search. Try different keywords.</p>
+
       <div class="scholar-cta">
         <a class="btn btn-primary btn-large" href="https://scholar.google.com/citations?user=Weg1NwQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
           View Full Profile on Google Scholar
         </a>
       </div>
@@ -507,60 +753,69 @@
     <div class="container">
       <h2 class="section-title">Contact</h2>
       <p class="section-subtitle">Open to research collaborations, academic discussions, and new opportunities in ionospheric and space physics.</p>
+
       <div class="contact-grid">
+
         <div class="contact-card">
           <span class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </span>
           <div>
             <h3>Email</h3>
-            <p>Verified institutional address at <strong>oulu.fi</strong>. Reach out for research collaborations or inquiries.</p>
+            <p>Institutional address at <strong>oulu.fi</strong>. Reach out for research collaborations or inquiries.</p>
           </div>
         </div>
+
         <div class="contact-card">
           <span class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
           </span>
           <div>
             <h3>Google Scholar</h3>
             <a href="https://scholar.google.com/citations?user=Weg1NwQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="inline-link">View publication list &amp; citations</a>
           </div>
         </div>
+
         <div class="contact-card">
           <span class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.078.53 3.19 3.19 0 00.112.437c.243.743.65 1.303 1.214 1.68.565.376 1.255.564 2.072.564.647 0 1.224-.096 1.735-.291a3.517 3.517 0 001.296-.871 3.52 3.52 0 00.748-1.383c.158-.54.238-1.15.238-1.833v-.44H19.68v1.7h1.784c-.073.498-.244.876-.516 1.137-.272.26-.646.39-1.12.39-.37 0-.686-.075-.95-.226a1.77 1.77 0 01-.629-.64 3.046 3.046 0 01-.36-.976 6.998 6.998 0 01-.112-1.304v-.044c0-.494.038-.918.112-1.272a3.068 3.068 0 01.36-.952 1.79 1.79 0 01.628-.629c.264-.148.58-.222.95-.222.343 0 .647.075.912.225.265.15.463.375.595.677l1.738-.636a3.178 3.178 0 00-1.272-1.552C20.81.095 20.232 0 19.586 0zM0 .19v11.594h2.104v-4.55h1.892c.647 0 1.215-.12 1.703-.36.49-.24.872-.59 1.148-1.05.277-.46.415-.998.415-1.612 0-.635-.138-1.187-.415-1.655a2.827 2.827 0 00-1.148-1.08C5.211.297 4.643.19 3.996.19H0zm2.104 1.822h1.67c.493 0 .886.133 1.18.4.293.265.44.643.44 1.134 0 .49-.147.87-.44 1.138-.294.267-.687.4-1.18.4H2.104V2.012zm5.81 0h2.08l2.66 7.578 2.66-7.578h2.076L12.964 11.2a3.226 3.226 0 01-.37.793 2.33 2.33 0 01-.56.572 2.17 2.17 0 01-.716.34c-.264.074-.559.113-.886.113-.327 0-.634-.039-.922-.117a2.14 2.14 0 01-.75-.367l.611-1.535c.1.073.214.13.343.17.13.04.26.06.393.06.16 0 .303-.026.428-.078a.987.987 0 00.332-.226 1.33 1.33 0 00.23-.367 2.5 2.5 0 00.14-.487L7.914 2.012z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 00-.112.437 8.365 8.365 0 00-.078.53 9 9 0 00-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 00.014 1.017 9 9 0 00.05.727 7.946 7.946 0 00.078.53 3.19 3.19 0 00.112.437c.243.743.65 1.303 1.214 1.68.565.376 1.255.564 2.072.564.647 0 1.224-.096 1.735-.291a3.517 3.517 0 001.296-.871 3.52 3.52 0 00.748-1.383c.158-.54.238-1.15.238-1.833v-.44H19.68v1.7h1.784c-.073.498-.244.876-.516 1.137-.272.26-.646.39-1.12.39-.37 0-.686-.075-.95-.226a1.77 1.77 0 01-.629-.64 3.046 3.046 0 01-.36-.976 6.998 6.998 0 01-.112-1.304v-.044c0-.494.038-.918.112-1.272a3.068 3.068 0 01.36-.952 1.79 1.79 0 01.628-.629c.264-.148.58-.222.95-.222.343 0 .647.075.912.225.265.15.463.375.595.677l1.738-.636a3.178 3.178 0 00-1.272-1.552C20.81.095 20.232 0 19.586 0zM0 .19v11.594h2.104v-4.55h1.892c.647 0 1.215-.12 1.703-.36.49-.24.872-.59 1.148-1.05.277-.46.415-.998.415-1.612 0-.635-.138-1.187-.415-1.655a2.827 2.827 0 00-1.148-1.08C5.211.297 4.643.19 3.996.19H0zm2.104 1.822h1.67c.493 0 .886.133 1.18.4.293.265.44.643.44 1.134 0 .49-.147.87-.44 1.138-.294.267-.687.4-1.18.4H2.104V2.012zm5.81 0h2.08l2.66 7.578 2.66-7.578h2.076L12.964 11.2a3.226 3.226 0 01-.37.793 2.33 2.33 0 01-.56.572 2.17 2.17 0 01-.716.34c-.264.074-.559.113-.886.113-.327 0-.634-.039-.922-.117a2.14 2.14 0 01-.75-.367l.611-1.535c.1.073.214.13.343.17.13.04.26.06.393.06.16 0 .303-.026.428-.078a.987.987 0 00.332-.226 1.33 1.33 0 00.23-.367 2.5 2.5 0 00.14-.487L7.914 2.012z"/></svg>
           </span>
           <div>
             <h3>ResearchGate</h3>
             <a href="https://www.researchgate.net/profile/Samson-Moges/research" target="_blank" rel="noopener noreferrer" class="inline-link">Research profile &amp; full-text papers</a>
           </div>
         </div>
+
         <div class="contact-card">
           <span class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9 12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9 12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
           </span>
           <div>
             <h3>University of Oulu</h3>
             <a href="https://oulu.cris.fi/en/persons/OY-381666650" target="_blank" rel="noopener noreferrer" class="inline-link">Official university profile (CRIS)</a>
           </div>
         </div>
+
         <div class="contact-card">
           <span class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </span>
           <div>
             <h3>LinkedIn</h3>
             <a href="https://fi.linkedin.com/in/samson-moges-928742154" target="_blank" rel="noopener noreferrer" class="inline-link">Connect on LinkedIn</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Samson Tilahun Moges. All rights reserved.</p>
+    <div class="footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="year"></span> <span>Samson Tilahun Moges</span>. All rights reserved.
+      </p>
       <div class="footer-links">
         <a href="https://scholar.google.com/citations?user=Weg1NwQAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
         <a href="https://www.researchgate.net/profile/Samson-Moges" target="_blank" rel="noopener noreferrer">ResearchGate</a>
